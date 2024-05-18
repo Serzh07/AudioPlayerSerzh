@@ -12,21 +12,16 @@ body {
 
 .main {
     display: none;
-    
 }
 
 .player {
     background: #1e1e1e;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    width: 450px;
-    height: 350px;
+    width: 350px;
     padding: 20px;
     color: #fff;
     text-align: center;
-}
-.own{
-    margin: 5%; 
 }
 
 .row1 {
@@ -96,3 +91,17 @@ body {
     font-size: 0.9em;
 }
 
+/* Responsive Design */
+@media (max-width: 400px) {
+    .player {
+        width: 300px;
+    }
+
+    .seek-bar {
+        margin: 0 5px;
+    }
+
+    .play img, .muteButtons img {
+        width: 25px;
+    }
+}
