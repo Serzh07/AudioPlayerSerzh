@@ -17,18 +17,20 @@ let data = {
 
 let currentSong = 0;
 
-const seekbar = document.getElementById('seek-bar');
+    const seekbar = document.getElementById('seek-bar');
+
 seekbar.addEventListener("click", function (event) {
     const rect = seekbar.getBoundingClientRect();
     const offsetX = event.clientX - rect.left;
     const width = rect.width;
     const clickPositionRatio = offsetX / width;
     audio.currentTime = clickPositionRatio * audio.duration;
-    updateSeekBar(); // Update the seek bar fill immediately after clicking
+    updateSeekBar(); 
 });
+
 document.addEventListener("keydown", function (event) {
     if (event.code === "Space") {
-        event.preventDefault(); // Prevent the default action of space bar (scrolling the page)
+        event.preventDefault();
         playOrPause();
     }
 });
@@ -121,10 +123,10 @@ document.addEventListener("keydown", function (event) {
         var mute = document.getElementById("mute");
         if (audio.muted) {
             audio.muted = false;
-            mute.src = "images/volume.png"; //unmute
+            mute.src = "images/volume.png"; 
         } else {
             audio.muted = true;
-            mute.src = "images/volume-mute.png"; //mute
+            mute.src = "images/volume-mute.png"; 
         }
     }
 
@@ -140,4 +142,18 @@ document.addEventListener("keydown", function (event) {
         playSong();
     };
 
-      
+function playSongAt(index) {
+    currentSong = index;
+    playSong();
+}
+
+document.getElementById('playlist').addEventListener('click', function(event) {
+    if(event.target.tagName === 'LI') {
+        const index = Array.from(event.target.parentElement.children).indexOf(event.target);
+        playSongAt(index);
+        playSong();
+        audio.play();
+        play.src = "images/pause.png";
+    }
+});      
+

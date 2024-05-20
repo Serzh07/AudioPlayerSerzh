@@ -30,9 +30,18 @@
                     <img src="images/volume-down.png" id="decrease" onclick="decrease()" alt="">
                     <img src="images/volume.png" id="mute" onclick="muted()" alt="">
                     <img src="images/increase-volume.png" id="increase" onclick="increase()" alt="">
+                    
                 </div>
             </div>
         </div>
+    </div>
+    <div class="playlist">
+        <ul id="playlist">
+            <li onclick="playSongAt(0)">Song 1</li>
+            <li onclick="playSongAt(1)">Song 2</li>
+            <li onclick="playSongAt(2)">Song 3</li>
+            <li onclick="playSongAt(3)">Song 4</li>
+        </ul>
     </div>
     <audio id="audio" src="path/to/your/audio/file.mp3"></audio>
         <script src="script.js"></script>

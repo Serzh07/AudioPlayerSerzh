@@ -19,6 +19,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     width: 350px;
+    height: 300px;
     padding: 20px;
     color: #fff;
     text-align: center;
@@ -104,4 +105,27 @@ body {
     .play img, .muteButtons img {
         width: 25px;
     }
+}
+/* Styles for the playlist */
+.playlist {
+    background: #2e2e2e;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.playlist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.playlist li:hover {
+    background: #444;
 }
