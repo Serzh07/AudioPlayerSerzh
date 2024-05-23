@@ -129,3 +129,63 @@ body {
 .playlist li:hover {
     background: #444;
 }
+/* Mobile Navigation Menu Styles */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.mobile-nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu {
+    background: #2e2e2e;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: #fff;
+    border-bottom: 1px solid #444;
+}
+
+.menu ul li:hover {
+    background: #444;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: flex;
+}

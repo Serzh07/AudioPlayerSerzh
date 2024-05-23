@@ -35,14 +35,16 @@
             </div>
         </div>
     </div>
-    <div class="playlist">
-        <ul id="playlist">
-            <li onclick="playSongAt(0)">Song 1</li>
-            <li onclick="playSongAt(1)">Song 2</li>
-            <li onclick="playSongAt(2)">Song 3</li>
-            <li onclick="playSongAt(3)">Song 4</li>
-        </ul>
-    </div>
+     <nav class="mobile-nav">
+        <button id="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div id="menu" class="menu hidden">
+            <ul id="playlist">
+                
+            </ul>
+        </div>
+    </nav>
+    
+    
     <audio id="audio" src="path/to/your/audio/file.mp3"></audio>
         <script src="script.js"></script>
 </body>
