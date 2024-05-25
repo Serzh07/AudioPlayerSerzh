@@ -130,6 +130,8 @@ document.addEventListener("keydown", function (event) {
         }
     }
 
+    
+
     function increase() {
         audio.volume += 0.2;
     }
@@ -137,6 +139,12 @@ document.addEventListener("keydown", function (event) {
     function decrease() {
         audio.volume -= 0.2;
     }
+
+function updateVolume(event) {
+    audio.volume = event.target.value;
+}
+
+document.getElementById('volume-slider').addEventListener('input', updateVolume);
 
     window.onload = function () {
         playSong();
@@ -150,10 +158,24 @@ const playlistElement = document.getElementById('playlist');
 const menu = document.getElementById('menu');
 const menuToggle = document.getElementById('menu-toggle');
 
+
 function generatePlaylist() {
     data.title.forEach((title, index) => {
         const li = document.createElement('li');
-        li.textContent = title;
+
+        const img = document.createElement('img');
+        img.src = data.poster[index];
+        img.alt = title;
+        img.classList.add('playlist-img');
+
+        
+        const span = document.createElement('span');
+        span.textContent = title;
+        span.classList.add('playlist-title');
+
+        li.appendChild(img);
+        li.appendChild(span);
+
         li.addEventListener('click', () => {
             currentSong = index;
             playSong();
@@ -161,6 +183,7 @@ function generatePlaylist() {
             play.src = "images/pause.png";
             toggleMenu(); 
         });
+
         playlistElement.appendChild(li);
     });
 }
@@ -173,6 +196,9 @@ window.toggleMenu = function() {
         menu.classList.add('hidden');
     }
 };
+
+
+
 
 
 

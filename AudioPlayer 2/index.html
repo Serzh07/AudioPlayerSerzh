@@ -27,12 +27,11 @@
             <div class="mute">
                 <div class="currentTime" id="currentTime">00:00 / 00:00</div>
                 <div class="muteButtons">
-                    <img src="images/volume-down.png" id="decrease" onclick="decrease()" alt="">
-                    <img src="images/volume.png" id="mute" onclick="muted()" alt="">
-                    <img src="images/increase-volume.png" id="increase" onclick="increase()" alt="">
-                    
+                    <img src="images/volume.png" id="mute" onclick="muted()" alt="">  
                 </div>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
             </div>
+            
         </div>
     </div>
      <nav class="mobile-nav">
